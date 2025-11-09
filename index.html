@@ -3,66 +3,83 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lars – vis, download og video</title>
-  <style>
-    :root { --bg:#0f172a; --card:#111827; --fg:#e5e7eb; --muted:#9ca3af; }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--fg)}
-    .wrap{max-width:960px;margin:40px auto;padding:24px}
-    .card{background:var(--card);border-radius:16px;padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
-    h1{margin:0 0 8px;font-size:28px}
-    h2{margin:24px 0 10px;font-size:20px}
-    p{margin:0 0 20px;color:var(--muted)}
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
-    a.button{display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:600;border:1px solid #374151}
-    a.primary{background:#2563eb;color:white;border-color:#2563eb}
-    a.secondary{background:transparent;color:var(--fg)}
-    .hint{font-size:14px;color:var(--muted)}
+  <title>Lars — vis eller download</title>
 
-    /* Indlejret forhåndsvisning af lars.html */
-    .viewer{width:100%;height:70vh;border:1px solid #374151;border-radius:12px;overflow:hidden;margin-top:14px}
-    .viewer > iframe{width:100%;height:100%;border:0;background:white}
-
-    /* Responsiv YouTube-embed (16:9) */
-    .video-card{margin-top:10px}
-    .yt{position:relative;width:100%;padding-top:56.25%;border-radius:12px;overflow:hidden;border:1px solid #374151}
-    .yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:black}
-  </style>
+  <!-- Tailwind (CDN) til hurtig styling) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: tailwind.colors.green },
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
-  <div class="wrap">
-    <div class="card">
-      <h1>lars.html</h1>
-      <p>Vælg om du vil se siden online eller downloade filen. Nederst kan du også se videoen.</p>
-
-      <div class="actions">
-        <!-- Åbn og se filen i ny fane -->
-        <a class="button primary" href="lars.html" target="_blank" rel="noopener">Se filen i ny fane</a>
-
-        <!-- Download filen -->
-        <a class="button secondary" href="lars.html" download="lars.html">Download filen</a>
-      </div>
-      <div class="hint">Tip: Hvis download-knappen ikke downloader i din browser, højreklik og vælg “Gem link som…”.</div>
-
-      <!-- Indlejret forhåndsvisning af lars.html -->
-      <div class="viewer" aria-label="Forhåndsvisning">
-        <iframe src="lars.html" title="Forhåndsvisning af lars.html"></iframe>
-      </div>
-
-      <!-- Video-sektion -->
-      <div class="video-card">
-        <h2>Video</h2>
-        <p>Se introduktionsvideoen herunder:</p>
-        <div class="yt">
-          <iframe
-            src="https://www.youtube.com/embed/YYktjNoKSLo?rel=0&modestbranding=1"
-            title="YouTube video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
+<body class="font-sans bg-gray-50 text-gray-800">
+  <header class="bg-white/95 backdrop-blur sticky top-0 z-50 shadow-sm">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+      <h1 class="text-xl sm:text-2xl font-extrabold text-primary-700">Lars’ Greenkeeping</h1>
+      <a href="#video" class="hidden sm:inline-block px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100">Se video</a>
     </div>
-  </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-8 sm:py-14">
+    <section class="bg-white rounded-2xl shadow-md p-6 sm:p-10">
+      <h2 class="text-2xl sm:text-3xl font-extrabold mb-2">Forside</h2>
+      <p class="text-gray-600 mb-6">
+        Vælg om du vil <strong>se</strong> websiden <code>lars.html</code> eller <strong>downloade</strong> filen.
+      </p>
+
+      <!-- Knapper -->
+      <div class="flex flex-wrap gap-3 mb-6">
+        <a href="lars.html" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-primary-600 text-white font-semibold shadow hover:bg-primary-700">
+          Åbn lars.html i ny fane
+        </a>
+
+        <a href="lars.html" download="lars.html"
+           class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white border border-gray-300 font-semibold shadow hover:bg-gray-50">
+          Download lars.html
+        </a>
+      </div>
+
+      <!-- Indlejret forhåndsvisning -->
+      <div class="rounded-xl overflow-hidden border border-gray-200">
+        <iframe src="lars.html" title="Forhåndsvisning af lars.html"
+                class="w-full h-[70vh] bg-white"></iframe>
+      </div>
+
+      <!-- Info -->
+      <p class="text-sm text-gray-500 mt-3">
+        Tip: Hvis download ikke starter i din browser, højreklik på “Download lars.html” og vælg <em>Gem link som…</em>
+      </p>
+    </section>
+
+    <!-- Video-sektion -->
+    <section id="video" class="mt-10 sm:mt-14 bg-white rounded-2xl shadow-md p-6 sm:p-10">
+      <h2 class="text-2xl sm:text-3xl font-extrabold mb-3">Video</h2>
+      <p class="text-gray-600 mb-6">Kort præsentation på YouTube.</p>
+
+      <!-- Responsiv 16:9 YouTube-embed -->
+      <div class="relative w-full pb-[56.25%] h-0 overflow-hidden rounded-xl border border-gray-200">
+        <iframe
+          class="absolute inset-0 w-full h-full"
+          src="https://www.youtube.com/embed/YYktjNoKSLo?rel=0&modestbranding=1"
+          title="YouTube video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mt-10 sm:mt-16 py-8 text-center text-gray-500">
+    &copy; 2025 Lars’ Greenkeeping. Alle rettigheder forbeholdes.
+  </footer>
 </body>
 </html>
