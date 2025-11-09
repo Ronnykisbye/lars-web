@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lars – vis eller download</title>
+  <style>
+    :root { --bg:#0f172a; --card:#111827; --fg:#e5e7eb; --muted:#9ca3af; }
+    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--fg)}
+    .wrap{max-width:960px;margin:40px auto;padding:24px}
+    .card{background:var(--card);border-radius:16px;padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    h1{margin:0 0 8px;font-size:28px} p{margin:0 0 20px;color:var(--muted)}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+    a.button{display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:600;border:1px solid #374151}
+    a.primary{background:#2563eb;color:white;border-color:#2563eb}
+    a.secondary{background:transparent;color:var(--fg)}
+    .hint{font-size:14px;color:var(--muted)}
+    .viewer{width:100%;height:78vh;border:1px solid #374151;border-radius:12px;overflow:hidden}
+    .viewer > iframe{width:100%;height:100%;border:0;background:white}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>lars.html</h1>
+      <p>Vælg om du vil se siden online eller downloade filen.</p>
+
+      <div class="actions">
+        <!-- Åbn og se filen i ny fane -->
+        <a class="button primary" href="lars.html" target="_blank" rel="noopener">Se filen i ny fane</a>
+
+        <!-- Download filen (browseren vil downloade i stedet for at vise) -->
+        <a class="button secondary" href="lars.html" download="lars.html">Download filen</a>
+      </div>
+
+      <div class="hint">Tip: Hvis download-knappen ikke downloader i din browser, kan du højreklikke på linket og vælge “Gem link som…”.</div>
+
+      <!-- Indlejret forhåndsvisning -->
+      <div class="viewer" aria-label="Forhåndsvisning">
+        <iframe src="lars.html" title="Forhåndsvisning af lars.html"></iframe>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
