@@ -10,112 +10,123 @@
   <title>Lars-Web | Forside</title>
 
   <style>
-    /* ----------- Basestil og layout ----------- */
-    :root{
-      --prim:#004a80;
-      --prim-lys:#0a6fb3;
-      --bg1:#eef4fa;
-      --bg2:#cfddee;
-      --tekst:#222;
+    /* ----------- Farver og base ----------- */
+    :root {
+      --prim: #004a80;
+      --prim-lys: #0a6fb3;
+      --bg1: #eef4fa;
+      --bg2: #cfddee;
+      --tekst: #222;
     }
 
-    *{box-sizing:border-box}
-    body{
-      margin:0;
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      color:var(--tekst);
-      background:linear-gradient(to bottom,var(--bg1),var(--bg2));
-      text-align:center;
+      color: var(--tekst);
+      background: linear-gradient(to bottom, var(--bg1), var(--bg2));
+      text-align: center;
     }
 
-    header{
-      background:var(--prim);
-      color:#fff;
-      padding:24px 16px;
-      font-size:2rem;
-      font-weight:700;
-      letter-spacing:.5px;
+    header {
+      background: var(--prim);
+      color: #fff;
+      padding: 25px 15px;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
     }
 
-    main{
-      margin:48px auto;
-      max-width:1100px;
-      padding:0 16px;
+    main {
+      margin: 48px auto;
+      max-width: 1100px;
+      padding: 0 16px;
     }
 
-    h2{
-      color:#00355a;
-      font-size:1.6rem;
-      margin-bottom:28px;
+    h2 {
+      color: #00355a;
+      font-size: 1.6rem;
+      margin-bottom: 30px;
     }
 
     /* ----------- Grid med kort ----------- */
-    .menu{
-      display:grid;
+    .menu {
+      display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap:28px;
-      align-items:stretch;
+      gap: 30px;
+      align-items: stretch;
     }
 
     /* ----------- Kort (billede + titel + knap) ----------- */
-    .card{
-      background:#fff;
-      border-radius:16px;
-      box-shadow:0 8px 16px rgba(0,0,0,.10);
-      overflow:hidden;
-      display:flex;
-      flex-direction:column;
-      transition:transform .2s ease;
-    }
-    .card:hover{ transform: scale(1.03) }
-
-    /* Billede: begræns størrelse og gør det hurtigt */
-    .card img{
-      width:100%;
-      height:180px;          /* fast højde for ens udseende */
-      object-fit:cover;      /* beskær pænt */
-      image-rendering:auto;
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.10);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease;
     }
 
-    .card h3{
-      margin:16px 0 8px 0;
-      color:var(--prim);
+    .card:hover {
+      transform: scale(1.03);
     }
 
-    .card .actions{
-      margin:12px 0 22px 0;
+    /* ----------- Billeder: vis hele motivet ----------- */
+    .card img {
+      width: 100%;
+      height: auto;
+      max-height: 220px; /* ens højde men uden beskæring */
+      object-fit: contain;
+      display: block;
+      background: #fff;
+      border-bottom: 1px solid #ccc;
     }
 
-    .btn{
-      display:inline-block;
-      padding:10px 22px;
-      border-radius:10px;
-      background:var(--prim);
-      color:#fff;
-      text-decoration:none;
-      font-weight:700;
-      transition:background .2s ease;
+    .card h3 {
+      margin: 16px 0 8px 0;
+      color: var(--prim);
+      font-size: 1.2rem;
     }
-    .btn:hover{ background:var(--prim-lys) }
 
-    /* ----------- Footer ----------- */
-    footer{
-      margin-top:60px;
-      padding:18px;
-      font-size:.95rem;
-      color:#555;
-      background:#e9f1f7;
-      border-top:1px solid #cfd6de;
+    .card .actions {
+      margin: 12px 0 22px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 22px;
+      border-radius: 10px;
+      background: var(--prim);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      transition: background 0.2s ease;
+    }
+
+    .btn:hover {
+      background: var(--prim-lys);
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 18px;
+      font-size: 0.95rem;
+      color: #555;
+      background: #e9f1f7;
+      border-top: 1px solid #cfd6de;
     }
   </style>
 </head>
 
-
 <!-- ====================================================== -->
-<!--  AFSNIT 2: INDHOLD – MENU MED PNG-BILLEDER (RETTET)   -->
+<!--  AFSNIT 2: INDHOLD – MENU MED PNG-BILLEDER             -->
 <!-- ====================================================== -->
 <body>
-  <header>Velkommen til Lars-Web</header>
+  <header>Velkommen til Lars-Websider </header>
 
   <main>
     <h2>Vælg en underside</h2>
@@ -123,11 +134,7 @@
     <section class="menu">
       <!-- KORT 1: LARS -->
       <article class="card">
-        <img
-          src="img/lars.png"
-          alt="Lars’ side – forsidebillede"
-          loading="lazy"
-          style="width:100%; height:auto; display:block; object-fit:contain; background:#fff; border-bottom:1px solid #ccc;">
+        <img src="img/lars.png" alt="Lars’ side – forsidebillede" loading="lazy">
         <h3>Lars’ side</h3>
         <div class="actions">
           <a class="btn" href="lars.html">Gå til siden</a>
@@ -136,11 +143,7 @@
 
       <!-- KORT 2: BILLIARD -->
       <article class="card">
-        <img
-          src="img/billiard.png"
-          alt="Billiard – sjov tegning"
-          loading="lazy"
-          style="width:100%; height:auto; display:block; object-fit:contain; background:#fff; border-bottom:1px solid #ccc;">
+        <img src="img/billiard.png" alt="Billiard – sjov tegning" loading="lazy">
         <h3>Billiard</h3>
         <div class="actions">
           <a class="btn" href="billiard.html">Gå til siden</a>
@@ -151,3 +154,4 @@
 
   <footer>© 2025 Ronny Kisbye – Alle rettigheder forbeholdes</footer>
 </body>
+</html>
