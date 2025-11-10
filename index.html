@@ -1,85 +1,111 @@
 <!DOCTYPE html>
 <html lang="da">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lars — vis eller download</title>
 
-  <!-- Tailwind (CDN) til hurtig styling) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { primary: tailwind.colors.green },
-          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] }
-        }
-      }
+<!-- ====================================================== -->
+<!--  AFSNIT 1: GRUNDOPSÆTNING OG STIL                      -->
+<!-- ====================================================== -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lars-Web | Velkomstside</title>
+
+  <style>
+    /* ----------- Grundopsætning ----------- */
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(to bottom, #f0f4f8, #dbe9f6);
+      color: #222;
+      margin: 0;
+      padding: 0;
+      text-align: center;
     }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    /* ----------- Header (øverste bjælke) ----------- */
+    header {
+      background-color: #004a80;
+      color: white;
+      padding: 25px;
+      font-size: 2em;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    /* ----------- Overskrift og tekst ----------- */
+    main {
+      margin-top: 40px;
+    }
+
+    main h2 {
+      color: #00355a;
+      font-size: 1.6em;
+    }
+
+    /* ----------- Menu layout ----------- */
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      margin: 50px auto;
+      max-width: 800px;
+    }
+
+    /* ----------- Menu knapper ----------- */
+    .menu a {
+      display: block;
+      background-color: #ffffff;
+      border-radius: 15px;
+      padding: 25px 50px;
+      text-decoration: none;
+      color: #004a80;
+      font-weight: bold;
+      font-size: 1.1em;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+      transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .menu a:hover {
+      background-color: #004a80;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    /* ----------- Footer ----------- */
+    footer {
+      margin-top: 80px;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #555;
+      background-color: #e9f1f7;
+      border-top: 1px solid #ccc;
+    }
+  </style>
 </head>
-<body class="font-sans bg-gray-50 text-gray-800">
-  <header class="bg-white/95 backdrop-blur sticky top-0 z-50 shadow-sm">
-    <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
-      <h1 class="text-xl sm:text-2xl font-extrabold text-primary-700">Lars’ Greenkeeping</h1>
-      <a href="#video" class="hidden sm:inline-block px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100">Se video</a>
-    </div>
+
+
+<!-- ====================================================== -->
+<!--  AFSNIT 2: SIDE INDHOLD (MENU OG LINKS)                -->
+<!-- ====================================================== -->
+<body>
+  <header>
+    Velkommen til Lars-Web
   </header>
 
-  <main class="max-w-5xl mx-auto px-4 py-8 sm:py-14">
-    <section class="bg-white rounded-2xl shadow-md p-6 sm:p-10">
-      <h2 class="text-2xl sm:text-3xl font-extrabold mb-2">Forside</h2>
-      <p class="text-gray-600 mb-6">
-        Vælg om du vil <strong>se</strong> websiden <code>lars.html</code> eller <strong>downloade</strong> filen.
-      </p>
+  <main>
+    <h2>Vælg en underside:</h2>
 
-      <!-- Knapper -->
-      <div class="flex flex-wrap gap-3 mb-6">
-        <a href="lars.html" target="_blank" rel="noopener"
-           class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-primary-600 text-white font-semibold shadow hover:bg-primary-700">
-          Åbn lars.html i ny fane
-        </a>
+    <div class="menu">
+      <a href="lars.html">🔹 Lars’ side</a>
+      <a href="historie.html">📜 Historie</a>
+      <a href="illiard.index">🎱 Billard</a>
+    </div>
 
-        <a href="lars.html" download="lars.html"
-           class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white border border-gray-300 font-semibold shadow hover:bg-gray-50">
-          Download lars.html
-        </a>
-      </div>
-
-      <!-- Indlejret forhåndsvisning -->
-      <div class="rounded-xl overflow-hidden border border-gray-200">
-        <iframe src="lars.html" title="Forhåndsvisning af lars.html"
-                class="w-full h-[70vh] bg-white"></iframe>
-      </div>
-
-      <!-- Info -->
-      <p class="text-sm text-gray-500 mt-3">
-        Tip: Hvis download ikke starter i din browser, højreklik på “Download lars.html” og vælg <em>Gem link som…</em>
-      </p>
-    </section>
-
-    <!-- Video-sektion -->
-    <section id="video" class="mt-10 sm:mt-14 bg-white rounded-2xl shadow-md p-6 sm:p-10">
-      <h2 class="text-2xl sm:text-3xl font-extrabold mb-3">Video</h2>
-      <p class="text-gray-600 mb-6">Kort præsentation på YouTube.</p>
-
-      <!-- Responsiv 16:9 YouTube-embed -->
-      <div class="relative w-full pb-[56.25%] h-0 overflow-hidden rounded-xl border border-gray-200">
-        <iframe
-          class="absolute inset-0 w-full h-full"
-          src="https://www.youtube.com/embed/YYktjNoKSLo?rel=0&modestbranding=1"
-          title="YouTube video"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen></iframe>
-      </div>
-    </section>
+    <p>Her kan du vælge hvilken del af hjemmesiden du vil besøge.</p>
   </main>
 
-  <footer class="mt-10 sm:mt-16 py-8 text-center text-gray-500">
-    &copy; 2025 Lars’ Greenkeeping. Alle rettigheder forbeholdes.
+  <footer>
+    © 2025 Ronny Kisbye – Alle rettigheder forbeholdes
   </footer>
 </body>
+
 </html>
