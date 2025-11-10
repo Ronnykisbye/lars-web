@@ -7,7 +7,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lars-Web | Forside</title>
+  <title>Lars-Websider | Forside</title>
 
   <style>
     /* ----------- Farver og base ----------- */
@@ -19,9 +19,7 @@
       --tekst: #222;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -37,7 +35,7 @@
       padding: 25px 15px;
       font-size: 2rem;
       font-weight: 700;
-      letter-spacing: 0.5px;
+      letter-spacing: .5px;
     }
 
     main {
@@ -60,27 +58,24 @@
       align-items: stretch;
     }
 
-    /* ----------- Kort (billede + titel + knap) ----------- */
+    /* ----------- Kort ----------- */
     .card {
       background: #fff;
       border-radius: 16px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.10);
+      box-shadow: 0 8px 16px rgba(0,0,0,.10);
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: transform 0.2s ease;
+      transition: transform .2s ease;
     }
-
-    .card:hover {
-      transform: scale(1.03);
-    }
+    .card:hover { transform: scale(1.03); }
 
     /* ----------- Billeder: vis hele motivet ----------- */
     .card img {
       width: 100%;
-      height: auto;
-      max-height: 220px; /* ens højde men uden beskæring */
-      object-fit: contain;
+      height: auto;          /* behold proportioner */
+      max-height: 220px;     /* samme visuel højde */
+      object-fit: contain;   /* INGEN beskæring */
       display: block;
       background: #fff;
       border-bottom: 1px solid #ccc;
@@ -92,9 +87,7 @@
       font-size: 1.2rem;
     }
 
-    .card .actions {
-      margin: 12px 0 22px 0;
-    }
+    .card .actions { margin: 12px 0 22px 0; }
 
     .btn {
       display: inline-block;
@@ -104,17 +97,14 @@
       color: #fff;
       text-decoration: none;
       font-weight: 700;
-      transition: background 0.2s ease;
+      transition: background .2s ease;
     }
-
-    .btn:hover {
-      background: var(--prim-lys);
-    }
+    .btn:hover { background: var(--prim-lys); }
 
     footer {
       margin-top: 60px;
       padding: 18px;
-      font-size: 0.95rem;
+      font-size: .95rem;
       color: #555;
       background: #e9f1f7;
       border-top: 1px solid #cfd6de;
@@ -123,7 +113,7 @@
 </head>
 
 <!-- ====================================================== -->
-<!--  AFSNIT 2: INDHOLD – MENU MED PNG-BILLEDER (LARS2)     -->
+<!--  AFSNIT 2: INDHOLD – MENU MED PNG-BILLEDER             -->
 <!-- ====================================================== -->
 <body>
   <header>Velkommen til Lars-Websider</header>
@@ -132,9 +122,10 @@
     <h2>Vælg en underside</h2>
 
     <section class="menu">
-      <!-- KORT 1: LARS -->
+      <!-- KORT 1: LARS (nyt billede) -->
       <article class="card">
-        <img src="img/lars2.png?v=1" alt="Lars’ side – forsidebillede" loading="lazy">
+        <!-- Cache-bust med ?v=3 for at tvinge nyt billede ind -->
+        <img src="img/lars2.png?v=3" alt="Lars’ side – forsidebillede" loading="lazy">
         <h3>Lars’ side</h3>
         <div class="actions">
           <a class="btn" href="lars.html">Gå til siden</a>
@@ -143,7 +134,7 @@
 
       <!-- KORT 2: BILLIARD -->
       <article class="card">
-        <img src="img/billiard.png" alt="Billiard – sjov tegning" loading="lazy">
+        <img src="img/billiard.png?v=1" alt="Billiard – sjov tegning" loading="lazy">
         <h3>Billiard</h3>
         <div class="actions">
           <a class="btn" href="billiard.html">Gå til siden</a>
@@ -154,3 +145,4 @@
 
   <footer>© 2025 Ronny Kisbye – Alle rettigheder forbeholdes</footer>
 </body>
+</html>
