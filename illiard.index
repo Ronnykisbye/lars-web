@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billardklubben Gilleleje - Moderne Forslag</title>
+    <!-- Indlæser Tailwind CSS for hurtig og responsiv styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Bruger en klassisk, mørk billard-palette for et professionelt look */
+        :root {
+            --color-primary-green: #0A6040; /* Dyb smaragdgrøn - Billardfilt */
+            --color-secondary-gold: #ECC85B; /* Blødt guld - Accent */
+            --color-dark-bg: #1A1A1A; /* Næsten sort - Baggrund */
+            --color-text-light: #E0E0E0;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-dark-bg);
+            color: var(--color-text-light);
+            line-height: 1.6;
+        }
+        .header-bg {
+            background-color: var(--color-primary-green);
+        }
+        .cta-button {
+            background-color: var(--color-secondary-gold);
+            color: var(--color-dark-bg);
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #FDD869; /* Lidt lysere guld ved hover */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .card-bg {
+            background-color: #282828; /* Mørk grå for sektionskort */
+        }
+        .border-gold {
+            border-color: var(--color-secondary-gold);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="header-bg shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold text-white tracking-tight">
+                Gilleleje Billard Klub
+            </h1>
+            <!-- Navigationslinks (scroll til sektioner) - For en simpel klubside er dette ofte bedst -->
+            <nav class="hidden md:block">
+                <a href="#livescore" class="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition duration-150">Livescore</a>
+                <a href="#omklubben" class="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition duration-150">Om Klubben</a>
+                <a href="#kontakt" class="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition duration-150">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-10 pb-20">
+        <!-- 1. Hero Sektion (Forside + Tagline) -->
+        <section id="forside" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+            <h2 class="text-6xl sm:text-7xl font-extrabold text-white mb-4">
+                Billardklubben <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300">Gilleleje</span>
+            </h2>
+            <p class="text-2xl text-gray-400 mb-8 font-light">
+                Velkommen til Gillelejes centrum for seriøst billard.
+            </p>
+            <!-- Inkluderer den gamle tagline, men styler den moderne -->
+            <p class="text-lg font-bold text-gray-500 italic mb-10">
+                — BYEN PÅ TOPPEN —
+            </p>
+
+            <!-- Placeholder for billede af klubben/bordene -->
+            <div class="bg-gray-800 rounded-xl shadow-2xl p-6 h-64 flex items-center justify-center border-4 border-gold/50">
+                <p class="text-gray-500 text-xl font-semibold">
+                    [Placeholder for billede af klubbens borde i høj kvalitet]
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. Livescore Streaming Sektion (Den vigtigste funktion) -->
+        <section id="livescore" class="bg-gray-900 py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h3 class="text-4xl font-bold mb-10 text-white">Live <span class="text-gold">Score</span> & Streaming</h3>
+                <p class="text-gray-400 mb-12 max-w-2xl mx-auto">
+                    Vi streamer løbende den aktuelle score fra vores fire keglebillardborde. Følg spændingen live!
+                </p>
+
+                <!-- Streaming Link (alle borde) -->
+                <a href="#" class="inline-block cta-button px-10 py-4 text-xl font-bold rounded-lg shadow-lg mb-8 hover:shadow-xl">
+                    Gå til LIVE STREAMING (Alle borde)
+                </a>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
+                    <!-- Links til individuelle borde -->
+                    <a href="#" class="card-bg p-6 rounded-xl shadow-lg border-2 border-gold/30 hover:border-gold transition duration-200">
+                        <span class="text-4xl font-extrabold block mb-2 text-white">Bord 1</span>
+                        <span class="text-gray-400 block">Se aktuel score her</span>
+                    </a>
+                    <a href="#" class="card-bg p-6 rounded-xl shadow-lg border-2 border-gold/30 hover:border-gold transition duration-200">
+                        <span class="text-4xl font-extrabold block mb-2 text-white">Bord 2</span>
+                        <span class="text-gray-400 block">Se aktuel score her</span>
+                    </a>
+                    <a href="#" class="card-bg p-6 rounded-xl shadow-lg border-2 border-gold/30 hover:border-gold transition duration-200">
+                        <span class="text-4xl font-extrabold block mb-2 text-white">Bord 3</span>
+                        <span class="text-gray-400 block">Se aktuel score her</span>
+                    </a>
+                    <a href="#" class="card-bg p-6 rounded-xl shadow-lg border-2 border-gold/30 hover:border-gold transition duration-200">
+                        <span class="text-4xl font-extrabold block mb-2 text-white">Bord 4</span>
+                        <span class="text-gray-400 block">Se aktuel score her</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Om Klubben Sektion (Erstatter Forside/Diverse information) -->
+        <section id="omklubben" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <h3 class="text-4xl font-bold mb-8 text-center text-white">Hvem er vi?</h3>
+            <div class="card-bg p-8 rounded-xl shadow-xl border-t-4 border-primary-green">
+                <p class="text-lg text-gray-300 mb-6">
+                    Her kan indsættes en kort, dynamisk tekst om klubbens historie, værdier, og daglige aktiviteter.
+                    For eksempel: "Gilleleje Billard Klub har i årtier været et samlingspunkt for billardentusiaster i Nordsjælland. Vi er en aktiv klub med både turneringsspillere og motionsspillere, der værdsætter både det sociale og det sportslige aspekt af spillet."
+                </p>
+                <!-- **OPMÆRKSOMHEDSPUNKT:** Den gamle sides alfabets-liste (abcdef...) antages at være et resterende, ikke-funktionelt element, der skal fjernes for at modernisere. Hvis den repræsenterer en skjult feature, skal den genopbygges her, men for nu skjules den, da den ødelægger designet. -->
+                <!-- Her er det skjulte, oprindelige element for at sikre, at intet indhold "forsvinder" -->
+                <div class="hidden">
+                    abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (Kontaktinformation) -->
+    <footer id="kontakt" class="bg-primary-green text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            
+            <div>
+                <h4 class="text-2xl font-bold mb-3">Find Os</h4>
+                <p class="text-gray-200">
+                    GB-idrætshus<br>
+                    Idrætsvej 4<br>
+                    3250 Gilleleje
+                </p>
+            </div>
+            
+            <div>
+                <h4 class="text-2xl font-bold mb-3">Kontakt Klubben</h4>
+                <p class="text-gray-200">
+                    Tlf. klub: 4830 3761
+                </p>
+                <p class="text-gray-200">
+                    E-mail: <a href="mailto:gillelejebillard@gmail.com" class="underline hover:text-gold transition duration-150">gillelejebillard@gmail.com</a>
+                </p>
+            </div>
+
+            <div class="md:text-right">
+                <h4 class="text-2xl font-bold mb-3">Åbningstider</h4>
+                <p class="text-gray-200">
+                    [Indsæt aktuelle åbningstider her]
+                </p>
+            </div>
+
+        </div>
+        <div class="mt-8 text-center text-sm text-white/50 border-t border-white/20 pt-4">
+            &copy; 2024 Gilleleje Billard Klub. Alle rettigheder forbeholdt.
+        </div>
+    </footer>
+
+</body>
+</html>
